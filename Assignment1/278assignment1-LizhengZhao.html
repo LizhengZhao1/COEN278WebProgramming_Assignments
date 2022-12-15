@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            var count = 0;
+            function change() {
+                var block1 = document.getElementById("block1");
+                
+                var block2 = document.getElementById("block2");
+                
+                var block3 = document.getElementById("block3");
+                
+                var block4 = document.getElementById("block4");
+                
+                var block5 = document.getElementById("block5");
+                if (count == 0) {
+                    block1.style.width = "100%";
+                    block1.style.height = "100px";
+                    block1.style.float = "left";
+
+                    block2.style.width = "250px";
+                    block2.style.height = "400px";
+                    block2.style.float = "left";
+
+                    block3.style.width = "540px";
+                    block3.style.height = "400px";
+                    block3.style.float = "left";
+
+                    block4.style.width = "210px";
+                    block4.style.height = "400px";
+                    block4.style.float = "right";
+
+                    block5.style.width = "100%";
+                    block5.style.height = "40px";
+                    block5.style.float = "right";
+                    count = 1;
+                }else {
+                    block1.style.width = "100px";
+                    block1.style.height = "60px";
+                    block1.style.float = null;
+
+                    block2.style.width = "120px";
+                    block2.style.height = "80px";
+                    block2.style.float = null;
+
+                    block3.style.width = "240px";
+                    block3.style.height = "100px";
+                    block3.style.float = null;
+
+                    block4.style.width = "600px";
+                    block4.style.height = "120px";
+                    block4.style.float = null;
+
+                    block5.style.width = "200px";
+                    block5.style.height = "140px";
+                    block5.style.float = null;
+                    count = 0;
+                }
+            }
+        </script>
+    </head>
+    <body>
+        <div style="width:1000px;height:540px;border:solid 10px red;">
+            <div id = "block1" style="background-color:#8bc5d5; width:100px;height: 60px;">block1</div>
+            <div id = "block2" style="background-color:#8fffd5; width:120px;height: 80px;">block2</div>
+            <div id = "block3" style="background-color:#f39d3d; width:240px;height: 100px;">block3</div>
+            <div id = "block4" style="background-color:#f39dff; width:600px;height: 120px;">block4</div>
+            <div id = "block5" style="background-color:#139dff; width:200px;height: 140px;">block5</div>
+        </div>
+        <button onclick='change()'>ChangeBlocks</button>
+    </body>
+</html>

@@ -1,0 +1,27 @@
+
+<html>
+<head></head>
+<div id="header" style="background-color:rgba(146,146,146,1);">
+    <h1 style="margin-bottom:0;height:80px;color:rgba(76,82,89,1);">Gambling Site</h1>
+</div>
+    
+    <form action="/login" method="post">
+    <h1 style="color:rgba(76,82,89,1);">Username</h1>
+    <input type="text" name="username_login"><br>
+    <h1 style="color:rgba(76,82,89,1);">Password</h1>
+    <input type="password" name="password_login"><br>
+    <div style = "position:absolute; top: 310px; left: 10px"><input type="submit" name="" value="Login"></input></div>
+    </form> 
+
+    <form action="/backToWelcome" method="post">
+    <div style = "position:absolute; top: 310px; left: 90px"><input type="submit" name="" value="Go Back"></input></div>
+    </form>
+    <div style = "position:absolute; top: 330px; left: 10px">
+    <% if session[:message] %>
+    <h3 style="color:red;"><%= session[:message] %> </h3>
+    <% session[:message] = nil %>
+    <% end %>
+    </div>
+</html>
+
+

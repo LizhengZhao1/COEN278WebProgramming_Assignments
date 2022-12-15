@@ -1,0 +1,52 @@
+<html>
+<head></head>
+<body>
+    <div id="header" style="background-color:rgba(146,146,146,1);">
+    <h1 style="margin-bottom:0;height:80px;color:rgba(76,82,89,1);">Gambling Site</h1>
+    </div>
+    <p>Place your bet on dice number (1 to 6).</p>
+    
+    <form action= "<%=@path%>" method="post" >
+    bet money <input type="text" name="money"><br>
+    on <div style = "position:absolute; top: 160px; left: 78px"><input type="text" name="on"><br></div>
+    <div style = "position:absolute; top: 185px; left: 195px"><input type="submit" name="" value="Bet"></input></div>
+    </form> 
+
+    <div style = "position:absolute; top: 200px;">
+    <% if session[:message] %>
+    <h3 style="color:red;"><%= session[:message] %> </h3>
+    <% session[:message] = nil %>
+    <% end %>
+    </div>
+
+
+    <form style = "position:absolute; top:100px; left: 400px" >
+    <fieldset>
+    <legend>This time</legend>
+    <p>Total win</p>
+    <input type="text" size="30" name="totalWin" value= "$<%= session[:totalWin] %>"><br>
+    <p>Total loss</p>
+    <input type="text" size="30" name="totalLoss" value= "$<%= session[:totalLoss] %>"><br>
+    <p>Total profit</p>
+    <input type="text" size="30" name="profit" value= "$<%= session[:profit]%>"><br>
+    </fieldset>
+    </form>
+
+    <form style = "position:fixed; top:350px; width:100%">
+    <fieldset>
+    <legend>Account</legend>
+    <p>Total win</p>
+    <input type="text" size="30" name="winFromStart" value= "$<%= @currentUser.totalWin %>"><br>
+    <p>Total loss</p>
+    <input type="text" size="30" name="lossFromStart" value= "$<%= @currentUser.totalLoss %>"><br>
+    <p>Total profit</p>
+    <input type="text" size="30" name="profitFromStart" value= "$<%= @currentUser.totalProfit %>"><br>
+    </fieldset>
+    </form>
+
+    <form style = "position:fixed; top:605px" action="/logout/<%= @currentUser.id %>" method="post">
+    <input type="submit" name="" value="Log Out"></input>
+
+    </form>
+</body>
+</html>
